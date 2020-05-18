@@ -21,15 +21,15 @@ Get the list of labels that belongs to a project
 ```json
 {
   "data": [
-    { "id": "", "title": "All labels" },
-    { "id": "1", "color": "#B71540", "title": "Dolphin" },
-    { "id": "2", "color": "#38ADA9", "title": "Lighthouse" },
-    { "id": "3", "color": "#F6B93B", "title": "Adventure Time" },
-    { "id": "4", "color": "#0A3D62", "title": "Frog" },
-    { "id": "5", "color": "#ff9f43", "title": "Lamborghini" },
-    { "id": "6", "color": "#5f27cd", "title": "Speaker" },
-    { "id": "7", "color": "#8395a7", "title": "Human" },
-    { "id": "8", "color": "#01a3a4", "title": "Rock" }
+    { "id": "", "name": "All labels" },
+    { "id": "1", "color": "#B71540", "name": "Dolphin" },
+    { "id": "2", "color": "#38ADA9", "name": "Lighthouse" },
+    { "id": "3", "color": "#F6B93B", "name": "Adventure Time" },
+    { "id": "4", "color": "#0A3D62", "name": "Frog" },
+    { "id": "5", "color": "#ff9f43", "name": "Lamborghini" },
+    { "id": "6", "color": "#5f27cd", "name": "Speaker" },
+    { "id": "7", "color": "#8395a7", "name": "Human" },
+    { "id": "8", "color": "#01a3a4", "name": "Rock" }
   ]
 }
 ```

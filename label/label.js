@@ -8,10 +8,12 @@ module.exports = {
     for (let i = 0; i < n; i += 1 ) {
       res.push({
         "id": faker.random.uuid(),
-        "name": faker.address.country(),
+        "title": faker.address.country(),
         "color": utils.getRandomColor(),
       });
     };
-    return res;
+    return {
+      "data": res
+    }
   }
 }

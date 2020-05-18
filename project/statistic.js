@@ -2,11 +2,13 @@ const faker = require('faker');
 const utils = require('../utils');
 module.exports = {
   overall: function() {
-    return [
-      { "name": "No activities", "value": faker.random.number() },
-      { "name": "Annotated", "value": faker.random.number() },
-      { "name": "Reviewed/Done", "value": faker.random.number() },
-    ];
+    return {
+      "data": [
+        { "name": "No activities", "value": faker.random.number() },
+        { "name": "Annotated", "value": faker.random.number() },
+        { "name": "Reviewed/Done", "value": faker.random.number() },
+      ]
+    };
   },
   members: function() {
     return {
