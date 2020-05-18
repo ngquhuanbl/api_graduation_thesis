@@ -41,10 +41,7 @@ app.get('/api/label', function (req, res) {
   res.json(labelDataGenerator.getLabels());
 });
 
-
-
-
 const PORT = 3001;
-app.listen(PORT, function () {
+app.listen(process.env.PORT || PORT, function () {
     console.log(`API running on port ${PORT}`);
 })
