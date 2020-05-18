@@ -18,6 +18,17 @@ Endpoints for viewing and manipulating the Projects that the Authenticated User 
 
 * [Statistic](project/statistic.md) : `GET /api/project/statistic/`
 
+### Dataset 
+
+Endpoints for viewing and manipulating the Projects that the Authenticated User has permissions to access:
+
+* [Get list of datasets of a project](dataset/get-dataset-of-project.md) : `GET /api/dataset&projectID={project_id}`
+
+### Label 
+
+Endpoints for viewing and manipulating the Projects that the Authenticated User has permissions to access:
+
+* [Get list of labels of a project](label/get-label-of-project.md) : `GET /api/dataset&projectID={project_id}`
 
 
 

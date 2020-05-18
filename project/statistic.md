@@ -1,10 +1,6 @@
 # Project statistic
 
-Used to collect statistic data base on four main criterias
-
-**Base URL** : `/api/project/statistic`
-
-**Method** : `GET`
+Used to collect statistic data base on four main criterias 
 
 **Auth required** : YES
 
@@ -14,8 +10,9 @@ Used to collect statistic data base on four main criterias
 
 These criterias are associated with UI statistic modal's tab
 
-* [Overall](./statistic/overall.md) : `GET /overall/:id/`
-* [Members](./statistic/members.md) : `GET /members/:id/`
-* [Images](./statistic/images.md) : `GET /images/`
-* [Labels](./statistic/labels.md) : `GET /labels/`
+* [Overall](./statistic/overall.md) : `GET /api/project/statistic/overall/`
+* [Members](./statistic/members.md) : `GET /api/project/statistic/members/`
+* [Images](./statistic/images.md) : `GET /api/project/statistic/images/`
+* [Labels](./statistic/labels.md) : `GET /api/project/statistic/labels/`
+
 

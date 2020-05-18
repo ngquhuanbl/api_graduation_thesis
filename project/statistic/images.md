@@ -11,27 +11,18 @@ The data will be filtered by dataset (if required)
 **Statistic URL**: `/members/`
 
 **Full URL** : `/api/project/statistic/members/`
+* Filtered by all dataset: `/api/project/statistic/members?projectID={project_id}`
+* Filtered by a specific dataset: `/api/project/statistic/members?projectID={project_id}&datasetID={dataset_id}`
+
+**URL Parameters** : 
+* `projectID=[string]` where `projectID` is the ID of the Project that needs the statistic data.
+* `datasetID=[string]` where `datasetID` is the ID of the Dataset that the statistic data will be filtered by.
 
 **Method** : `GET`
 
 **Auth required** : YES
 
 **Permissions required** : YES
-
-## Request
-**Filtered by all dataset**
-```json
-{
-  "projectId": "pususokiglij"
-}
-```
-**Filtered by a specific dataset**
-```json
-{
-  "projectId": "pususokiglij",
-  "datasetId": "sacvidetodki"
-}
-```
 
 ## Success Response
 
@@ -68,7 +59,7 @@ The server responses with a result of:
 
 ## Error Responses
 
-**Condition** : If Project does not exist with `id` of provided `id` parameter.
+**Condition** : If Project does not exist with `"id"` of prov"id"ed `"id"` parameter.
 
 **Code** : `404 NOT FOUND`
 
@@ -79,7 +70,7 @@ The server responses with a result of:
 **Condition** : If Project exists but Authorized User does not have required
 permissions.
 
-**Code** : `403 FORBIDDEN`
+**Code** : `403 FORB"id"DEN`
 
 **Content** :
 

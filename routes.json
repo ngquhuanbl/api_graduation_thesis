@@ -1,0 +1,6 @@
+{
+  "/api/project/statistic/*": "/$1",
+  "/api/label/": "/label-filter",
+  "/api/dataset/": "/dataset-filter",
+  "/api/label/": "/label-filter"
+}

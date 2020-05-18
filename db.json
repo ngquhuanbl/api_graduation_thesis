@@ -1,13 +1,38 @@
 {
-  "project": {
-    "statistic" : {
-      "overall": {
-        "data": [
-          { "name": "No activities", "value": 9 },
-          { "name": "Annotated", "value": 25 },
-          { "name": "Reviewed/Done", "value": 16 }
-        ]
-      }
+  "overall": {
+    "data": [
+      { "name": "No activities", "value": 9 },
+      { "name": "Annotated", "value": 25 },
+      { "name": "Reviewed/Done", "value": 16 }
+    ]
+  },
+  "members": {
+    "data": {
+      "labellers": 800000,
+      "reviewers": 2000000
+    }
+  },
+  "images": {
+    "data": {
+      "line": [
+        { "n": 750, "t": 0 },
+        { "n": 1485, "t": 1 },
+        { "n": 123, "t": 3 },
+        { "n": 150, "t": 4 }
+      ],
+      "donut": [
+        { "name": "Finished", "value": 1345 },
+        { "name": "Unused", "value": 1163 }
+      ]
+    }
+  },
+  "label": {
+    "data": {
+      "n": 1500,
+      "donut": [
+        { "name": "Have the label", "value": 1345 },
+        { "name": "Don't have the label", "value": 1163 }
+      ]
     }
   }
 }
