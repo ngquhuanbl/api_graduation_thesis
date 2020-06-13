@@ -2,7 +2,7 @@
 
 Get the list of datasets that belongs to a project
 
-**URL** : `/api/dataset&id={project_id}`
+**URL** : `/api/dataset?id={project_id}`
 
 **URL Parameters** : `id=[string]` where `id` is the ID of the Project that the desired datasets belong to
 

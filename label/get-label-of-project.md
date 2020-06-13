@@ -2,7 +2,7 @@
 
 Get the list of labels that belongs to a project
 
-**URL** : `/api/label&id={project_id}`
+**URL** : `/api/label?id={project_id}`
 
 **URL Parameters** : `id=[string]` where `id` is the ID of the Project that the desired labels belong to
 
@@ -36,7 +36,7 @@ Get the list of labels that belongs to a project
 
 ## Error Responses
 
-**Condition** : If Project does not exist with `"id"` of prov"id"ed `"id"` parameter.
+**Condition** : If Project does not exist with `"id"` of provided `"id"` parameter.
 
 **Code** : `404 NOT FOUND`
 
@@ -47,7 +47,7 @@ Get the list of labels that belongs to a project
 **Condition** : If Project exists but Authorized User does not have required
 permissions.
 
-**Code** : `403 FORB"id"DEN`
+**Code** : `403 FORBIDDEN`
 
 **Content** :
 

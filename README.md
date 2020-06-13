@@ -22,13 +22,25 @@ Endpoints for viewing and manipulating the Projects that the Authenticated User 
 
 Endpoints for viewing and manipulating the Projects that the Authenticated User has permissions to access:
 
-* [Get list of datasets of a project](dataset/get-dataset-of-project.md) : `GET /api/dataset&projectID={project_id}`
+* [Get list of datasets of a project](dataset/get-dataset-of-project.md) : `GET /api/dataset?projectID={project_id}`
 
 ### Label 
 
 Endpoints for viewing and manipulating the Projects that the Authenticated User has permissions to access:
 
-* [Get list of labels of a project](label/get-label-of-project.md) : `GET /api/dataset&projectID={project_id}`
+* [Get list of labels of a project](label/get-label-of-project.md) : `GET /api/dataset?projectID={project_id}`
+
+### Task
+
+Endpoints for viewing and manipulating the Tasks that the Authenticated User has permissions to access:
+
+* [Get data used for annotating of a task](task/get-annotation-data.md) : `GET /api/task?id={task_id}`
+
+### Annotate
+
+Endpoints for annotating that the Authenticated User has permissions to access:
+
+* [Get data used for annotating of a task (Annotation server)](annotate/get-annotation-data.md) : `GET /api/annotate?id={task_id}`
 
 
 
