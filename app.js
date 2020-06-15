@@ -58,7 +58,21 @@ app.get('/api/task', function(req, res) {
   }, 5000)
 })
 
-app.get('/api/annotate', function(req, res) {
+app.get('/api/task/statistic', function(req, res) {
+  const serverError = false
+  setTimeout(() => {
+    console.log(`Task Id: ${req.query.id}`);
+    if (serverError) {
+      res.status(500).json({
+        "detail": "Server error",
+      })
+    } else {
+      res.status(200).json(task.getStatistic())
+    }
+  })
+})
+
+app.get('/api/annotation/draft', function(req, res) {
   const serverError = false
   console.log(req.query.id)
   setTimeout(() => {
@@ -67,13 +81,28 @@ app.get('/api/annotate', function(req, res) {
         "detail": "Server error",
       })
     } else {
-      res.status(200).json(annotate.getAnnotationData())
+      res.status(200).json(annotate.getDraftData())
+    }
+  }, 1000)
+})
+
+app.get('/api/annotation/review', function(req, res) {
+  const serverError = false
+  console.log(req.query.id)
+  setTimeout(() => {
+    if (serverError) {
+      res.status(500).json({
+        "detail": "Server error",
+      })
+    } else {
+      res.status(200).json(annotate.getReviewData())
     }
   }, 1000)
 })
 
 app.post('/api/annotation/result', function(req, res) {
-  console.log(req.body.result.markingObjects)
+  console.log(req.body.markingObjects[0])
+  console.log(req.body.markingObjects[0].data)
   setTimeout(() => {
     res.status(200).json({
       "status": 1,
@@ -89,7 +118,14 @@ app.post('/api/annotation/result', function(req, res) {
   }, 5000)
 })
 app.post('/api/annotation/draft', function(req, res) {
-  console.log(req.body.result.markingObjects[0].data.exterior)
+  const { markingObjects } = req.body
+  console.log(req.body)
+  console.log('--------------------------')
+  markingObjects.forEach((obj, index) => {
+    console.log(obj.tool)
+    console.log(obj.data)
+    console.log('--------------------------')
+  })
   setTimeout(() => {
     res.status(200).json({
       "status": 1,
@@ -104,6 +140,24 @@ app.post('/api/annotation/draft', function(req, res) {
     // res.status(500).end()
   }, 5000)
 })
+
+app.post('/api/annotation/review', function(req, res) {
+  console.log(req.body)
+  setTimeout(() => {
+    // res.status(200).json({
+    //   "status": 1,
+    //   "data": null,
+    //   "msg": "Khởi tạo thành công",
+    // })
+    // res.status(200).json({
+    //   "status": 0,
+    //   "data": null,
+    //   "msg": "Mother comes home",
+    // })
+    res.status(500).end()
+  }, 5000)
+})
+
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, function () {

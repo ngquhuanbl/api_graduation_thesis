@@ -61,6 +61,7 @@ module.exports = {
   getAnnotationData: function() {
     const taskDetails = [];
     const n = utils.randomIntegerBetween(10, 30);
+    // const n = utils.randomIntegerBetween(1, 10);
     const keywords = random({ exactly: n });
     for (let i = 0; i < n; i += 1) {
       taskDetails.push({
@@ -74,6 +75,16 @@ module.exports = {
         },
       });
     }
+    // taskDetails.push({
+    //   "id": 1,
+    //   "image": {
+    //     "id": 1,
+    //     "name": faker.random.words(),
+    //     "url": 'https://images.unsplash.com/photo-1591787823903-d6eca6b9a5a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
+    //     "width": 1500,
+    //     "height": 1000,
+    //   },
+    // });
     return {
       "data": {
         "project": {
@@ -87,6 +98,14 @@ module.exports = {
         "labels": labels,
         "taskDetails": taskDetails,
       }
+    }
+  },
+  getStatistic: function() {
+    const a = faker.random.number();
+    const b = faker.random.number();
+    return {
+      "processed": (a < b) ? a : b,
+      "total": (a > b) ? a : b,
     }
   }
 }

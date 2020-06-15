@@ -1,39 +1,39 @@
 # API
 ## Task
 ### 1. Tạo mới một task
-* Path: ```/annotation/task```
+* Path: ```/annotation/task
 * Method: ```POST```
 * Body: 
 ``` json 
 {
 	"project" : {
-		"_id" : 12345,
+		"id" : 12345,
 		"name" : "thesis",
 		"admin" : {
-			"_id" : 12345,
+			"id" : 12345,
 			"email" : "nchconghung@gmail.com"
 		},
 		"projectManager" : {
-			"_id" : 1234444,
+			"id" : 1234444,
 			"email" : "buctuong@gmail.com"
 		}
 	},
 	"datasets" : [
 		{
-			"_id" : 12345,
+			"id" : 12345,
 			"name" : "human"
 		}
 	],
 	"tasks" : [
 		{
-			"_id" : 124334,
+			"id" : 124334,
 			"dataset" : 12345,
 			"labeler" : {
-				"_id" : 124324,
+				"id" : 124324,
 				"email" : "nchconghung@gmail.com"
 			},
 			"reviewer" : {
-				"_id" : 3456776,
+				"id" : 3456776,
 				"email" : "nchonghung.fit@gmail.com"
 			},
 			"createdAt" : 1586575158086
@@ -41,13 +41,13 @@
 	],
 	"tools" : [
 		{
-			"_id" : 123,
+			"id" : 123,
 			"shape" : "polygon",
 			"label" : "gai",
 			"color" : "#000"
 		},
 		{
-			"_id" : 1234,
+			"id" : 1234,
 			"shape" : "polygon",
 			"label" : "ratnhieugai",
 			"color" : "#F45A"
@@ -79,11 +79,18 @@
     "status": 1,
     "data": [
         {
-            "task": 1234,
-            "taskDetail": 2134,
-            "image": 2345,
-            "status": 0,
-            "markingObjects": [
+		"task": 1234,
+		"taskDetail": 2134,
+		"image": {
+			"id" : 2345,
+			"dataset" : 1345,	
+			"name" : "hcmus.png",
+			"url" : "/pics/hcmus.png",
+			"height" : 1080,
+			"width" : 1920
+		},
+		"status": 0,
+		"markingObjects": [
                 {
                     "tool": 1234,
                     "data": {
@@ -140,8 +147,7 @@
             ],
             "reviewedAt": 1590466281500,
             "updatedAt": 1590466281500,
-            "createdAt": 1590464805346,
-            "_id": "5ecc91255784f04f569559df"
+            "createdAt": 1590464805346
         }
     ],
     "msg": null
@@ -154,43 +160,11 @@
   > -1: reject, 1: accept
   * Body: 
 ``` json 
-  {
-            "_id": "5ecc91255784f04f569559df",
-            "image": 1234,
-            "status": 1,
-            "markingObjects": [
-                {
-				"tool" : 1234,
-				"data" : {
-					"interior" : [
-						{
-							"objs" : [
-								{"x" : 1,"y" : 2.45},
-								{"x" : 0,"y" : 4.56},
-								{"x" : 1,"y" : 3.45}
-							]
-						},
-						{
-							"objs" : [
-								{"x" : 3,"y" : 2.45},
-								{"x" : 4,"y" : 4.56},
-								{"x" : 6,"y" : 3.45}
-							]
-						}
-					],
-					"exterior" : [
-						{"x" : 1,"y" : 2.45},
-						{"x" : 0,"y" : 4.56},
-						{"x" : 1,"y" : 3.45}
-					],
-					"bitmap" : null
-				}
-			}
-            ],
-            "reviewedAt": 0,
-            "updatedAt": 1586707223490,
-            "createdAt": 1586707223490
-        }
+{
+    "task": 1234,
+    "taskDetail": 2134,
+    "status": 1,
+}
 ```
   * Response:
 ``` json 
@@ -207,47 +181,38 @@
   * Body:
   ``` json 
 {
-	"image" : {
-		"_id" : 2345,
-		"dataset" : 12345,
-		"name" : "hcmus.png",
-		"url" : "/resources/hcmus.png",
-		"height" : 1080,
-		"width" : 1920
-	},
-	"result" : {
-		"task" : 1234,
-		"taskDetail" : 2134,
-		"markingObjects" : [
-			{
-				"tool" : 1234,
-				"data" : {
-					"interior" : [
-						{
-							"objs" : [
-								{"x" : 1,"y" : 2.45},
-								{"x" : 0,"y" : 4.56},
-								{"x" : 1,"y" : 3.45}
-							]
-						},
-						{
-							"objs" : [
-								{"x" : 3,"y" : 2.45},
-								{"x" : 4,"y" : 4.56},
-								{"x" : 6,"y" : 3.45}
-							]
-						}
-					],
-					"exterior" : [
-						{"x" : 1,"y" : 2.45},
-						{"x" : 0,"y" : 4.56},
-						{"x" : 1,"y" : 3.45}
-					],
-					"bitmap" : null
-				}
-			}	
-		]
-	}
+	"task" : 1234,
+	"taskDetail" : 2134,
+	"image" 2345,
+	"markingObjects" : [
+		{
+			"tool" : 1234,
+			"data" : {
+				"interior" : [
+					{
+						"objs" : [
+							{"x" : 1,"y" : 2.45},
+							{"x" : 0,"y" : 4.56},
+							{"x" : 1,"y" : 3.45}
+						]
+					},
+					{
+						"objs" : [
+							{"x" : 3,"y" : 2.45},
+							{"x" : 4,"y" : 4.56},
+							{"x" : 6,"y" : 3.45}
+						]
+					}
+				],
+				"exterior" : [
+					{"x" : 1,"y" : 2.45},
+					{"x" : 0,"y" : 4.56},
+					{"x" : 1,"y" : 3.45}
+				],
+				"bitmap" : null
+			}
+		}	
+	]
 }
 ```
   * Response: 
@@ -258,7 +223,136 @@
   "msg": "Khởi tạo thành công"
 }
 ```
-### 2. Lấy file export
+### 2. Lấy danh sách bản nháp
+* Path: ```/annotation/draft```
+* Method: ```GET```
+* Param:
+  * task: **int** - task hiện tại cần lấy danh sách bản nháp 
+  * pg_page: **int** - số trang hiện tại
+  * pg_size: **int** - số lượng trên mỗi trang, nếu bằng 0 thì lấy hết
+ * Ex: ```/annotation/draft?pg_page=0&pg_size=4&task=1234```
+ * Response:
+ ```json 
+ {
+    "status": 1,
+    "data": [
+        {
+		"task": 1234,
+		"taskDetail": 2134,
+		"image": 2345,
+		"status": 2,
+		"markingObjects": [
+		{
+                    "tool": 1234,
+                    "data": {
+                        "exterior": [
+                            {
+                                "x": 1.0,
+                                "y": 2.45
+                            },
+                            {
+                                "x": 0.0,
+                                "y": 4.56
+                            },
+                            {
+                                "x": 1.0,
+                                "y": 3.45
+                            }
+                        ],
+                        "interior": [
+                            {
+                                "objs": [
+                                    {
+                                        "x": 1.0,
+                                        "y": 2.45
+                                    },
+                                    {
+                                        "x": 0.0,
+                                        "y": 4.56
+                                    },
+                                    {
+                                        "x": 1.0,
+                                        "y": 3.45
+                                    }
+                                ]
+                            },
+                            {
+                                "objs": [
+                                    {
+                                        "x": 3.0,
+                                        "y": 2.45
+                                    },
+                                    {
+                                        "x": 4.0,
+                                        "y": 4.56
+                                    },
+                                    {
+                                        "x": 6.0,
+                                        "y": 3.45
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ],
+            "reviewedAt": 1590466281500,
+            "updatedAt": 1590466281500,
+            "createdAt": 1590464805346
+        }
+    ],
+    "msg": null
+}
+```
+### 3. Cập nhật bản nháp
+* Path: ```/annotation/draft```
+* Method: POST
+* Body:
+``` json 
+{
+	"task" : 1234,
+	"taskDetail" : 2134,
+	"image" 2345,
+	"markingObjects" : [
+		{
+			"tool" : 1234,
+			"data" : {
+				"interior" : [
+					{
+						"objs" : [
+							{"x" : 1,"y" : 2.45},
+							{"x" : 0,"y" : 4.56},
+							{"x" : 1,"y" : 3.45}
+						]
+					},
+					{
+						"objs" : [
+							{"x" : 3,"y" : 2.45},
+							{"x" : 4,"y" : 4.56},
+							{"x" : 6,"y" : 3.45}
+						]
+					}
+				],
+				"exterior" : [
+					{"x" : 1,"y" : 2.45},
+					{"x" : 0,"y" : 4.56},
+					{"x" : 1,"y" : 3.45}
+				],
+				"bitmap" : null
+			}
+		}	
+	]
+}
+```
+* Response: 
+``` json 
+{
+  "status": 1,
+  "data": null,
+  "msg": "Khởi tạo thành công"
+}
+```
+### 4. Lấy file export
   * Path: ```/annotation/result```
   * Param: 
     * project: **int** - id của project

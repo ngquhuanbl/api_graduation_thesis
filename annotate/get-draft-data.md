@@ -1,8 +1,8 @@
-# Get data used for annotating of a task (Annotation server)
+# Get draft annotation data of a task (Annotation server)
 
-Get UNSUBMITTED (aka DRAFT) annotation data of images belong to a task
+Get UNSUBMITTED (aka DRAFT) annotation data of a task
 
-**URL** : `/api/annotate?id={task_id}`
+**URL** : `/api/annotation/draft?id={task_id}`
 
 **URL Parameters** : `id=[string]` where `id` is the ID of the Task of which data the user is requesting
 
@@ -22,10 +22,12 @@ Get UNSUBMITTED (aka DRAFT) annotation data of images belong to a task
 {
   "data":  [
     {
-      "id": "", // task detail ID
-      "objects": [
+      "task": 1234,
+      "taskDetail": 2134,
+      "image": 2345,
+      "markingObjects": [
         {
-          "labelID": "",
+          "tool": 123121,
           "data": {
             "interior" : [
               {

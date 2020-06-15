@@ -1,6 +1,8 @@
 # RESTful API Specification
 Designed for ***HCMUS Image Annotation***, a graduation project of Shiba Team, HCM Universiry of Sciences, Vietnam, 2020
 
+---
+## **KHANG SERVER**
 ## Open Endpoints
 
 Open endpoints require no Authentication.
@@ -34,13 +36,34 @@ Endpoints for viewing and manipulating the Projects that the Authenticated User 
 
 Endpoints for viewing and manipulating the Tasks that the Authenticated User has permissions to access:
 
-* [Get data used for annotating of a task](task/get-annotation-data.md) : `GET /api/task?id={task_id}`
+* [Get task info](task/get-info.md) : `GET /api/task/info?id={task_id}`
+
+* [Get data used for annotating of a task](task/get-annotation-data.md) : `GET /api/task/annotate?id={task_id}`
+
+* [Get statistic data of a task](task/statistic.md) : `GET /api/task/statistic?id={task_id}`
+
+---
+## **HƯNG SERVER**
+
+## Open Endpoints
+
+Open endpoints require no Authentication.
+
+
+## Endpoints that require Authentication
+
+Closed endpoints require a valid Token to be included in the header of the
+request. A Token can be acquired from the Login view above.
 
 ### Annotate
 
 Endpoints for annotating that the Authenticated User has permissions to access:
 
-* [Get data used for annotating of a task (Annotation server)](annotate/get-annotation-data.md) : `GET /api/annotate?id={task_id}`
+* [Get DRAFT data](annotate/get-draft-data.md) : `GET /api/annotate/draft?id={task_id}`
+
+* [Get REVIEW data](annotate/get-review-data.md) : `GET /api/annotate/review?id={task_id}`
+
+
 
 
 

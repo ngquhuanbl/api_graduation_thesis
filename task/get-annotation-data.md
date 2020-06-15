@@ -4,7 +4,7 @@ Get data used for annotating of a task
 
 **URL** : `/api/task?id={taskid}`
 
-**URL Parameters** : `id=[string]` where `id` is the ID of the Task that the user is about to do (aka annotate)
+**URL Parameters** : `id=[number]` where `id` is the ID of the Task that the user is about to do (aka annotate)
 
 **Method** : `GET`
 
@@ -44,8 +44,8 @@ Get data used for annotating of a task
           "id": "",
           "name": "",
           "url": "",
-          "createdAt": "",
-          "updatedAt": "",
+          "width": 1690,
+          "height": 900,
         },
       }
     ]
