@@ -8,7 +8,7 @@ The data includes the number of workers belongs to each type of role (Labeller -
 
 **Full URL** : `/api/project/statistic/members?projectID={project_id}`
 
-**URL Parameters** : `projectID=[string]` where `projectID` is the ID of the Project that needs the statistic data.
+**URL Parameters** : `projectID=[number]` where `projectID` is the ID of the Project that needs the statistic data.
 
 **Method** : `GET`
 

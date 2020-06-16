@@ -4,7 +4,7 @@ Get UNSUBMITTED (aka DRAFT) annotation data of a task
 
 **URL** : `/api/annotation/draft?id={task_id}`
 
-**URL Parameters** : `id=[string]` where `id` is the ID of the Task of which data the user is requesting
+**URL Parameters** : `id=[number]` where `id` is the ID of the Task of which data the user is requesting
 
 **Method** : `GET`
 

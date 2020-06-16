@@ -16,8 +16,8 @@ The data will be filtered by label (if required)
 * Filtered by a specific labels: `/api/project/statistic/labels?projectID={project_ID}&labelID={label_ID}`
 
 **URL Parameters** : 
-* `projectID=[string]` where `projectID` is the ID of the Project that needs the statistic data.
-* `labelID=[string]` where `labelID` is the ID of the Label that the statistic data will be filtered by.
+* `projectID=[number]` where `projectID` is the ID of the Project that needs the statistic data.
+* `labelID=[number]` where `labelID` is the ID of the Label that the statistic data will be filtered by.
 
 **Method** : `GET`
 

@@ -8,7 +8,7 @@ The data includes the number of tasks belongs to each type of task (No activitie
 
 **Full URL** : `/api/project/statistic/overall?projectID={project_id}`
 
-**URL Parameters** : `projectID=[string]` where `projectID` is the ID of the Project that needs the statistic data.
+**URL Parameters** : `projectID=[number]` where `projectID` is the ID of the Project that needs the statistic data.
 
 **Method** : `GET`
 

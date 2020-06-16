@@ -7,7 +7,7 @@ module.exports = {
     const n = utils.randomIntegerBetween(1, 30);
     for (let i = 0; i < n; i += 1 ) {
       res.push({
-        "id": faker.random.uuid(),
+        "id": faker.random.number(),
         "title": faker.address.country(),
         "color": utils.getRandomColor(),
       });

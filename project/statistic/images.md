@@ -15,8 +15,8 @@ The data will be filtered by dataset (if required)
 * Filtered by a specific dataset: `/api/project/statistic/members?projectID={project_id}&datasetID={dataset_id}`
 
 **URL Parameters** : 
-* `projectID=[string]` where `projectID` is the ID of the Project that needs the statistic data.
-* `datasetID=[string]` where `datasetID` is the ID of the Dataset that the statistic data will be filtered by.
+* `projectID=[number]` where `projectID` is the ID of the Project that needs the statistic data.
+* `datasetID=[number]` where `datasetID` is the ID of the Dataset that the statistic data will be filtered by.
 
 **Method** : `GET`
 

@@ -4,7 +4,7 @@ Get the list of labels that belongs to a project
 
 **URL** : `/api/label?id={project_id}`
 
-**URL Parameters** : `id=[string]` where `id` is the ID of the Project that the desired labels belong to
+**URL Parameters** : `id=[number]` where `id` is the ID of the Project that the desired labels belong to
 
 **Method** : `GET`
 
@@ -21,15 +21,14 @@ Get the list of labels that belongs to a project
 ```json
 {
   "data": [
-    { "id": "", "name": "All labels" },
-    { "id": "1", "color": "#B71540", "name": "Dolphin" },
-    { "id": "2", "color": "#38ADA9", "name": "Lighthouse" },
-    { "id": "3", "color": "#F6B93B", "name": "Adventure Time" },
-    { "id": "4", "color": "#0A3D62", "name": "Frog" },
-    { "id": "5", "color": "#ff9f43", "name": "Lamborghini" },
-    { "id": "6", "color": "#5f27cd", "name": "Speaker" },
-    { "id": "7", "color": "#8395a7", "name": "Human" },
-    { "id": "8", "color": "#01a3a4", "name": "Rock" }
+    { "id": 1, "color": "#B71540", "name": "Dolphin" },
+    { "id": 2, "color": "#38ADA9", "name": "Lighthouse" },
+    { "id": 3, "color": "#F6B93B", "name": "Adventure Time" },
+    { "id": 4, "color": "#0A3D62", "name": "Frog" },
+    { "id": 5, "color": "#ff9f43", "name": "Lamborghini" },
+    { "id": 6, "color": "#5f27cd", "name": "Speaker" },
+    { "id": 7, "color": "#8395a7", "name": "Human" },
+    { "id": 8, "color": "#01a3a4", "name": "Rock" }
   ]
 }
 ```
