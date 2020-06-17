@@ -61,7 +61,3 @@ Endpoints for annotating that the Authenticated User has permissions to access:
 
 * [Get REVIEW data](annotate/get-review-data.md) : `POST /api/annotate/review`
 
-
-
-
-
