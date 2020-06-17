@@ -61,9 +61,8 @@ Endpoints for annotating that the Authenticated User has permissions to access:
 
 * [Get DRAFT data](annotate/get-draft-data.md) : `GET /api/annotate/draft?pg_no={page_number}&pg_size={page_size}&task={task_id}`
 
-* [Get REVIEW data](annotate/get-review-data.md) : `GET /api/annotate/review?pg_no={page_number}&pg_size={page_size}&task={task_id}`
 
 
 
 
-
+Heello
