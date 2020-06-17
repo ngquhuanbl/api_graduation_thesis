@@ -60,6 +60,8 @@ const labels = [
 module.exports = {
   getDraftData: function() {
     return {
+      "status": 1,
+      "msg": null,
       "data": [
         // {
         //   "task": 1234,
@@ -180,6 +182,7 @@ module.exports = {
   getReviewData: function() {
     return {
       "status": 1,
+      "msg": null,
       "data": [
 
       ]

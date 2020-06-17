@@ -20,6 +20,8 @@ Get the list of datasets that belongs to a project
 
 ```json
 {
+  "status": 1,
+  "msg": null,
   "data": [
     { "id": 1, "color": "#B71540", "title": "Tokyo, Japan" },
     { "id": 2, "color": "#38ADA9", "title": "Village in Ha Giang" },
@@ -51,5 +53,9 @@ permissions.
 **Content** :
 
 ```json
-{"detail": "You do not have permission to perform this action."}
+{
+  "status": -1,
+  "data": null,
+  "msg": "You do not have permission to perform this action.",
+}
 ```

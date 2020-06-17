@@ -39,6 +39,8 @@ The server responses with a result of:
 
 ```json
 {
+  "status": 1,
+  "msg": null,
   "data": {
     "n": 1500,
     "donut": [
@@ -67,5 +69,9 @@ permissions.
 **Content** :
 
 ```json
-{"detail": "You do not have permission to perform this action."}
+{
+  "status": -1,
+  "data": null,
+  "msg": "You do not have permission to perform this action.",
+}
 ```

@@ -29,6 +29,8 @@ The server responses with a result of:
 
 ```json
 {
+  "status": 1,
+  "msg": null,
   "data": [
     { "name": "No activities", "value": 9 },
     { "name": "Annotated", "value": 25 },
@@ -55,5 +57,9 @@ permissions.
 **Content** :
 
 ```json
-{"detail": "You do not have permission to perform this action."}
+{
+  "status": -1,
+  "data": null,
+  "msg": "You do not have permission to perform this action.",
+}
 ```

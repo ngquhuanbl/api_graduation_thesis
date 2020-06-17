@@ -3,6 +3,8 @@ const utils = require('../utils');
 module.exports = {
   overall: function() {
     return {
+      "status": 1,
+      "msg": null,
       "data": [
         { "name": "No activities", "value": faker.random.number() },
         { "name": "Annotated", "value": faker.random.number() },
@@ -12,6 +14,8 @@ module.exports = {
   },
   members: function() {
     return {
+      "status": 1,
+      "msg": null,
       "data": {
         "labellers": faker.random.number(),
         "reviewers": faker.random.number()
@@ -29,6 +33,8 @@ module.exports = {
       { "name": "Unused", "value": faker.random.number() }
     ];
     return {
+      "status": 1,
+      "msg": null,
       "data": {
         "line": line,
         "donut": donut,
@@ -37,6 +43,8 @@ module.exports = {
   },
   labels: function() {
     return {
+      "status": 1,
+      "msg": null,
       "data": {
         "n": faker.random.number(),
         "donut": [

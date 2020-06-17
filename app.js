@@ -25,17 +25,23 @@ app.get('/api/project/statistic/members', function (req, res) {
 
 app.get('/api/project/statistic/images', function (req, res) {
   console.log(req.query);
-  res.json(projectStatisticDataGenerator.images());
+  setTimeout(() => {
+    res.json(projectStatisticDataGenerator.images());
+  }, 5000)
 });
 
 app.get('/api/project/statistic/labels', function (req, res) {
   console.log(req.query);
-  res.json(projectStatisticDataGenerator.labels());
+  setTimeout(() => {
+    res.json(projectStatisticDataGenerator.labels());
+  }, 5000)
 });
 
 app.get('/api/dataset', function (req, res) {
   console.log(req.query);
-  res.json(datasetDataGenerator.getDatasets());
+  setTimeout(() => {
+    res.json(datasetDataGenerator.getDatasets());
+  }, 5000)
 });
 
 app.get('/api/label', function (req, res) {
@@ -43,19 +49,37 @@ app.get('/api/label', function (req, res) {
   res.json(labelDataGenerator.getLabels());
 });
 
-app.get('/api/task', function(req, res) {
+app.get('/api/task/annotation-info', function(req, res) {
   const serverError = false
   console.log(req.query.id)
   setTimeout(() => {
     console.log(req.query.id);
     if (serverError) {
-      res.status(500).json({
-        "detail": "Server error",
+      res.status(200).json({
+        "msg": "Server error",
+        "status": -1,
       })
     } else {
-      res.status(200).json(task.getAnnotationData())
+      res.status(200).json(task.getAnnotationInfo())
     }
-  }, 5000)
+  }, 500)
+})
+
+app.get('/api/task/task-details', function(req, res) {
+  const serverError = false
+  console.log(req.query.id)
+  setTimeout(() => {
+    console.log(req.query.id);
+    if (serverError) {
+      res.status(200).json({
+        "msg": "Server error",
+        "status": -1,
+      })
+    } else {
+      const { pg_no, pg_size } = req.query
+      res.status(200).json(task.getTaskDetails(pg_no, pg_size))
+    }
+  }, 500)
 })
 
 app.get('/api/task/statistic', function(req, res) {
@@ -63,8 +87,9 @@ app.get('/api/task/statistic', function(req, res) {
   setTimeout(() => {
     console.log(`Task Id: ${req.query.id}`);
     if (serverError) {
-      res.status(500).json({
-        "detail": "Server error",
+      res.status(200).json({
+        "msg": "Server error",
+        "status": -1,
       })
     } else {
       res.status(200).json(task.getStatistic())
@@ -77,8 +102,9 @@ app.get('/api/annotation/draft', function(req, res) {
   console.log(req.query.id)
   setTimeout(() => {
     if (serverError) {
-      res.status(500).json({
-        "detail": "Server error",
+      res.status(200).json({
+        "msg": "Server error",
+        "status": -1,
       })
     } else {
       res.status(200).json(annotate.getDraftData())
@@ -91,8 +117,9 @@ app.get('/api/annotation/review', function(req, res) {
   console.log(req.query.id)
   setTimeout(() => {
     if (serverError) {
-      res.status(500).json({
-        "detail": "Server error",
+      res.status(200).json({
+        "msg": "Server error",
+        "status": -1,
       })
     } else {
       res.status(200).json(annotate.getReviewData())
@@ -101,8 +128,7 @@ app.get('/api/annotation/review', function(req, res) {
 })
 
 app.post('/api/annotation/result', function(req, res) {
-  console.log(req.body.markingObjects[0])
-  console.log(req.body.markingObjects[0].data)
+  console.log(req.body.markingObjects)
   setTimeout(() => {
     res.status(200).json({
       "status": 1,

@@ -36,9 +36,9 @@ Endpoints for viewing and manipulating the Projects that the Authenticated User 
 
 Endpoints for viewing and manipulating the Tasks that the Authenticated User has permissions to access:
 
-* [Get task info](task/get-info.md) : `GET /api/task/info?id={task_id}`
+* [Get task info used for annotation](task/get-info.md) : `GET /api/task/annotation-info?id={task_id}`
 
-* [Get data used for annotating of a task](task/get-annotation-data.md) : `GET /api/task/annotate?id={task_id}`
+* [Get list of task details of a task](task/get-task-details.md) : `GET /api/task/task-details?pg_no={page_number}&pg_size={page_size}&task={task_id}`
 
 * [Get statistic data of a task](task/statistic.md) : `GET /api/task/statistic?id={task_id}`
 
@@ -59,9 +59,9 @@ request. A Token can be acquired from the Login view above.
 
 Endpoints for annotating that the Authenticated User has permissions to access:
 
-* [Get DRAFT data](annotate/get-draft-data.md) : `GET /api/annotate/draft?id={task_id}`
+* [Get DRAFT data](annotate/get-draft-data.md) : `GET /api/annotate/draft?pg_no={page_number}&pg_size={page_size}&task={task_id}`
 
-* [Get REVIEW data](annotate/get-review-data.md) : `GET /api/annotate/review?id={task_id}`
+* [Get REVIEW data](annotate/get-review-data.md) : `GET /api/annotate/review?pg_no={page_number}&pg_size={page_size}&task={task_id}`
 
 
 

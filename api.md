@@ -70,7 +70,7 @@
 * Method: ```GET```
 * Param:
   * task: **int** - task hiện tại cần review 
-  * pg_page: **int** - số trang hiện tại
+  * pg_no: **int** - số trang hiện tại
   * pg_size: **int** - số lượng trên mỗi trang, nếu bằng 0 thì lấy hết
  * Ex: ```/annotation/review?pg_page=0&pg_size=4&task=1234```
  * Response:
@@ -228,7 +228,7 @@
 * Method: ```GET```
 * Param:
   * task: **int** - task hiện tại cần lấy danh sách bản nháp 
-  * pg_page: **int** - số trang hiện tại
+  * pg_no: **int** - số trang hiện tại
   * pg_size: **int** - số lượng trên mỗi trang, nếu bằng 0 thì lấy hết
  * Ex: ```/annotation/draft?pg_page=0&pg_size=4&task=1234```
  * Response:

@@ -27,8 +27,12 @@ The server responses with a result of:
 
 ```json
 {
-  "processed": 81,
-  "total": 116,
+  "status": 1,
+  "msg": null,
+  "data": {
+    "processed": 81,
+    "total": 116,
+  }
 }
 ```
 
@@ -50,5 +54,9 @@ permissions.
 **Content** :
 
 ```json
-{"detail": "You do not have permission to perform this action."}
+{
+  "status": -1,
+  "data": null,
+  "msg": "You do not have permission to perform this action.",
+}
 ```

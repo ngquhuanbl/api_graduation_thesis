@@ -1,8 +1,12 @@
-# Get data used for annotating of a task
+# Get task info used for annotation
 
-Get data used for annotating of a task
+Get task info data used for annotation screen
+The data includes:
+- Project info
+- Dataset info
+- List of labels
 
-**URL** : `/api/task?id={taskid}`
+**URL** : `/api/task/annotation-info?id={task_id}`
 
 **URL Parameters** : `id=[number]` where `id` is the ID of the Task that the user is about to do (aka annotate)
 
@@ -20,6 +24,8 @@ Get data used for annotating of a task
 
 ```json
 {
+  "status": 1,
+  "msg": null,
   "data": {
     "project": {
       "id": "",
@@ -37,18 +43,6 @@ Get data used for annotating of a task
         "color": "",
       }
     ],
-    "taskDetails": [
-      {
-        "id": "",
-        "image": {
-          "id": "",
-          "name": "",
-          "url": "",
-          "width": 1690,
-          "height": 900,
-        },
-      }
-    ]
   }
 }
 ```
@@ -62,5 +56,9 @@ Get data used for annotating of a task
 **Content** :
 
 ```json
-{ "detail": "Server error" }
+{
+  "status": -1,
+  "data": null,
+  "msg": "Server error",
+}
 ```

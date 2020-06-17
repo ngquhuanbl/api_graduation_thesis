@@ -13,6 +13,8 @@ module.exports = {
       });
     };
     return {
+      "status": 1,
+      "msg": null,
       "data": res,
     };
   }

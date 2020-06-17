@@ -55,25 +55,61 @@ const labels = [
     "color": "#ffa801",
     "tool": "POINT",
   },
-]
+];
 const random = require('random-words')
+const fs = require('fs');
+const rawdata = fs.readFileSync('taskDetails.json');
+const db = JSON.parse(rawdata);
 module.exports = {
-  getAnnotationData: function() {
-    const taskDetails = [];
-    const n = utils.randomIntegerBetween(10, 30);
-    // const n = utils.randomIntegerBetween(1, 10);
-    const keywords = random({ exactly: n });
-    for (let i = 0; i < n; i += 1) {
-      taskDetails.push({
-        "id": i + 1,
-        "image": {
-          "id": i + 1,
-          "name": faker.random.words(),
-          "url": `https://source.unsplash.com/featured/?${keywords[i]}`,
-          "createdAt": 1587951804000,
-          "updatedAt": 1587961894000,
+  getAnnotationInfo: function() {
+    return {
+      "status": 1,
+      "msg": null,
+      "data": {
+        "project": {
+          "id": 1,
+          "name": faker.name.findName(),
         },
-      });
+        "dataset": {
+          "id": 1,
+          "name": faker.name.findName(),
+        },
+        "labels": labels,
+      }
+    }
+  },
+  getTaskDetails: function(pageNo, pageSize) {
+    const taskDetails = [];
+    // const n = utils.randomIntegerBetween(10, 30);
+    // // const n = utils.randomIntegerBetween(1, 10);
+    // const keywords = random({ exactly: n });
+    // for (let i = 0; i < n; i += 1) {
+    //   taskDetails.push({
+    //     "id": i + 1,
+    //     "image": {
+    //       "id": i + 1,
+    //       "name": faker.random.words(),
+    //       "url": `https://source.unsplash.com/featured/?${keywords[i]}`,
+    //       "createdAt": 1587951804000,
+    //       "updatedAt": 1587961894000,
+    //     },
+    //   });
+    // }
+    const n = pageSize * pageNo;
+    if (pageNo < 2) {
+      for (let i = (pageNo - 1) * pageNo; i < n; i += 1) {
+        const { id, author, download_url, width, height } = db[i];
+        taskDetails.push({
+          "id": id,
+          "image": {
+            "id": id,
+            "name": author,
+            "url": download_url,
+            "width": width,
+            "height": height,
+          }
+        })
+      }
     }
     // taskDetails.push({
     //   "id": 1,
@@ -86,26 +122,21 @@ module.exports = {
     //   },
     // });
     return {
-      "data": {
-        "project": {
-          "id": 1,
-          "name": random({ exactly: 1, wordsPerString:2})[0],
-        },
-        "dataset": {
-          "id": 1,
-          "name": random({ exactly: 1, wordsPerString:2})[0],
-        },
-        "labels": labels,
-        "taskDetails": taskDetails,
-      }
+      "status": 1,
+      "msg": null,
+      "data": taskDetails,
     }
   },
   getStatistic: function() {
     const a = faker.random.number();
     const b = faker.random.number();
     return {
-      "processed": (a < b) ? a : b,
-      "total": (a > b) ? a : b,
+      "status": 1,
+      "msg": null,
+      "data": {
+        "processed": (a < b) ? a : b,
+        "total": (a > b) ? a : b,
+      }
     }
   }
 }

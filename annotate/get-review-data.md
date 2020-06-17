@@ -1,10 +1,13 @@
-# Get draft annotation data of a task (Annotation server)
+# Get review data of a task (Annotation server)
 
-Get UNSUBMITTED (aka DRAFT) annotation data of  a task
+Get REVIEW data of  a task
 
-**URL** : `/api/annotation/review?id={task_id}`
+**URL** : `/api/annotation/review?pg_no={page_number}&pg_size={page_size}&task={task_id}`
 
-**URL Parameters** : `id=[number]` where `id` is the ID of the Task of which data the user is requesting
+**URL Parameters** :
+- `pg_no=[number]` where `pg_no` is the index of the current page
+- `pg_size=[number]` where `pg_size` is the size of the page
+- `task=[number]` where `task` is the ID of the task
 
 **Method** : `GET`
 
@@ -21,6 +24,7 @@ Get UNSUBMITTED (aka DRAFT) annotation data of  a task
 ```json
 {
   "status": 1,
+  "msg": null,
   "data":  [
     {
       "task": 1234,
@@ -51,7 +55,8 @@ Get UNSUBMITTED (aka DRAFT) annotation data of  a task
               {"x" : 1,"y" : 2.45},
               {"x" : 0,"y" : 4.56},
               {"x" : 1,"y" : 3.45}
-            ]
+            ],
+            "bitmap": null,
           },
         }
       ]
@@ -69,5 +74,9 @@ Get UNSUBMITTED (aka DRAFT) annotation data of  a task
 **Content** :
 
 ```json
-{ "detail": "Server error" }
+{ 
+  "status": -1,
+  "msg": "Server error",
+  "data": null,
+}
 ```
