@@ -1,4 +1,4 @@
-# Project statistic
+# [PROJECT] Get statistic data
 
 Used to collect statistic data base on four main criterias 
 

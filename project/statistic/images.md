@@ -1,4 +1,4 @@
-# Get **image** statistic data of the project
+# [PROJECT] Get **image** statistic data of the project
 
 Get the image statistic data of a specific project __filtered by dataset__
 
@@ -11,12 +11,12 @@ The data will be filtered by dataset (if required)
 **Statistic URL**: `/members/`
 
 **Full URL** : `/api/project/statistic/members/`
-* Filtered by all dataset: `/api/project/statistic/members?projectID={project_id}`
-* Filtered by a specific dataset: `/api/project/statistic/members?projectID={project_id}&datasetID={dataset_id}`
+* Filtered by all dataset: `/api/project/statistic/members?project_id={project_id}`
+* Filtered by a specific dataset: `/api/project/statistic/members?project_id={project_id}&dataset_id={dataset_id}`
 
 **URL Parameters** : 
-* `projectID=[number]` where `projectID` is the ID of the Project that needs the statistic data.
-* `datasetID=[number]` where `datasetID` is the ID of the Dataset that the statistic data will be filtered by.
+* `project_id=[number]` where `project_id` is the ID of the Project that needs the statistic data.
+* `dataset_id=[number]` where `datasetID` is the ID of the Dataset that the statistic data will be filtered by.
 
 **Method** : `GET`
 

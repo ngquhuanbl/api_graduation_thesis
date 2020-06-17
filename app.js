@@ -14,17 +14,17 @@ app.use(express.urlencoded({
 }));
 
 app.get('/api/project/statistic/overall', function (req, res) {
-  console.log(req.query);
+  console.log(req.query.project_id);
   res.json(projectStatisticDataGenerator.overall());
 });
 
 app.get('/api/project/statistic/members', function (req, res) {
-  console.log(req.query);
+  console.log(req.query.project_id);
   res.json(projectStatisticDataGenerator.members());
 });
 
 app.get('/api/project/statistic/images', function (req, res) {
-  console.log(req.query);
+  console.log(req.query.project_id);
   setTimeout(() => {
     res.json(projectStatisticDataGenerator.images());
   }, 5000)
@@ -45,7 +45,7 @@ app.get('/api/dataset', function (req, res) {
 });
 
 app.get('/api/label', function (req, res) {
-  console.log(req.query);
+  console.log(req.query.project_id);
   res.json(labelDataGenerator.getLabels());
 });
 
@@ -67,9 +67,8 @@ app.get('/api/task/annotation-info', function(req, res) {
 
 app.get('/api/task/task-details', function(req, res) {
   const serverError = false
-  console.log(req.query.id)
+  console.log(req.query)
   setTimeout(() => {
-    console.log(req.query.id);
     if (serverError) {
       res.status(200).json({
         "msg": "Server error",
@@ -97,9 +96,10 @@ app.get('/api/task/statistic', function(req, res) {
   })
 })
 
-app.get('/api/annotation/draft', function(req, res) {
+app.post('/api/annotation/get-draft', function(req, res) {
   const serverError = false
-  console.log(req.query.id)
+  console.log(req.body.task)
+  console.log(req.body.taskDetails)
   setTimeout(() => {
     if (serverError) {
       res.status(200).json({
@@ -112,9 +112,10 @@ app.get('/api/annotation/draft', function(req, res) {
   }, 1000)
 })
 
-app.get('/api/annotation/review', function(req, res) {
+app.post('/api/annotation/get-review', function(req, res) {
   const serverError = false
-  console.log(req.query.id)
+  console.log(req.body.task)
+  console.log(req.body.taskDetails)
   setTimeout(() => {
     if (serverError) {
       res.status(200).json({
@@ -128,7 +129,7 @@ app.get('/api/annotation/review', function(req, res) {
 })
 
 app.post('/api/annotation/result', function(req, res) {
-  console.log(req.body.markingObjects)
+  console.log('markingObjects:', req.body.markingObjects)
   setTimeout(() => {
     res.status(200).json({
       "status": 1,

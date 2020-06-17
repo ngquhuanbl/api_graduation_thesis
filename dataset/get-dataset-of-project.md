@@ -1,4 +1,4 @@
-# Get list of datasets of a specific object
+# Get datasets
 
 Get the list of datasets that belongs to a project
 

@@ -1,4 +1,4 @@
-# Get **label** statistic data of the project
+# [PROJECT] Get **label** statistic data of the project
 
 Get the label statistic data of a specific project __filtered by label__
 
@@ -11,13 +11,13 @@ The data will be filtered by label (if required)
 **Statistic URL**: `/labels/`
 
 **Full URL** : 
-* Filtered by all labels :`/api/project/statistic/labels?projectID={project_ID}
+* Filtered by all labels :`/api/project/statistic/labels?project_id={project_ID}
 `
-* Filtered by a specific labels: `/api/project/statistic/labels?projectID={project_ID}&labelID={label_ID}`
+* Filtered by a specific labels: `/api/project/statistic/labels?project_id={project_ID}&labe_id={label_ID}`
 
 **URL Parameters** : 
-* `projectID=[number]` where `projectID` is the ID of the Project that needs the statistic data.
-* `labelID=[number]` where `labelID` is the ID of the Label that the statistic data will be filtered by.
+* `project_id=[number]` where `project_id` is the ID of the Project that needs the statistic data.
+* `label_id=[number]` where `labelID` is the ID of the Label that the statistic data will be filtered by.
 
 **Method** : `GET`
 

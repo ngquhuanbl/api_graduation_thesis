@@ -1,4 +1,4 @@
-# Get list of labels of a specific object
+# Get labels of a project
 
 Get the list of labels that belongs to a project
 
@@ -23,14 +23,14 @@ Get the list of labels that belongs to a project
   "status": 1,
   "msg": null,
   "data": [
-    { "id": 1, "color": "#B71540", "name": "Dolphin" },
-    { "id": 2, "color": "#38ADA9", "name": "Lighthouse" },
-    { "id": 3, "color": "#F6B93B", "name": "Adventure Time" },
-    { "id": 4, "color": "#0A3D62", "name": "Frog" },
-    { "id": 5, "color": "#ff9f43", "name": "Lamborghini" },
-    { "id": 6, "color": "#5f27cd", "name": "Speaker" },
-    { "id": 7, "color": "#8395a7", "name": "Human" },
-    { "id": 8, "color": "#01a3a4", "name": "Rock" }
+    { "id": 1, "color": "#B71540", "name": "Dolphin", "tool": 1 },
+    { "id": 2, "color": "#38ADA9", "name": "Lighthouse", "tool": 2 },
+    { "id": 3, "color": "#F6B93B", "name": "Adventure Time", "tool": 2 },
+    { "id": 4, "color": "#0A3D62", "name": "Frog", "tool": 1 },
+    { "id": 5, "color": "#ff9f43", "name": "Lamborghini", "tool": 3 },
+    { "id": 6, "color": "#5f27cd", "name": "Speaker", "tool": 1 },
+    { "id": 7, "color": "#8395a7", "name": "Human", "tool": 3 },
+    { "id": 8, "color": "#01a3a4", "name": "Rock", "tool": 4 }
   ]
 }
 ```

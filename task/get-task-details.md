@@ -1,6 +1,12 @@
-# Get task info for 
+# Get task details
 
-Get data used for annotating of a task
+Get the list of task details belongs to a task
+
+Each element of the list includes:
+- Task detail ID
+- Corresponding image data (ID, name, url, width, height, updated date)
+
+
 
 **URL** : `/api/task/task-details?pg_no={page_number}&pg_size={page_size}&task={task_id}`
 
@@ -34,6 +40,7 @@ Get data used for annotating of a task
         "url": "",
         "width": 1690,
         "height": 900,
+        "updatedAt": ,
       },
     }
   ]

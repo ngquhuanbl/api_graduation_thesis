@@ -1,14 +1,14 @@
-# Get overall project statistic data
+# [PROJECT] Get overall project statistic data
 
 Get the overall statistic data of a specific project.
 
 The data includes the number of tasks belongs to each type of task (No activities - Annotated - Reviewed/Done)
 
-**Statistic URL**: `/overall?projectID={project_id}`
+**Statistic URL**: `/overall?project_id={project_id}`
 
-**Full URL** : `/api/project/statistic/overall?projectID={project_id}`
+**Full URL** : `/api/project/statistic/overall?project_id={project_id}`
 
-**URL Parameters** : `projectID=[number]` where `projectID` is the ID of the Project that needs the statistic data.
+**URL Parameters** : `project_id=[number]` where `project_id` is the ID of the Project that needs the statistic data.
 
 **Method** : `GET`
 

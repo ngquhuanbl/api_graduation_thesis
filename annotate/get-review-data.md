@@ -2,18 +2,31 @@
 
 Get REVIEW data of  a task
 
-**URL** : `/api/annotation/review?pg_no={page_number}&pg_size={page_size}&task={task_id}`
+**URL** : `/api/annotation/get-review`
 
-**URL Parameters** :
-- `pg_no=[number]` where `pg_no` is the index of the current page
-- `pg_size=[number]` where `pg_size` is the size of the page
-- `task=[number]` where `task` is the ID of the task
-
-**Method** : `GET`
+**Method** : `POST`
 
 **Auth required** : YES
 
 **Permissions required** : YES
+
+**Data constraints**
+
+```json
+{
+  "task": "[task id in number]",
+  "taskDetails": "[list of task detail's ids in number]",
+}
+```
+
+**Data example**
+
+```json
+{
+  "task": 1,
+  "taskDetails": [1, 4, 7, 11, 12],
+}
+```
 
 ## Success Response
 

@@ -1,4 +1,4 @@
-# Get statistic data of a task
+# Get statistic data
 
 Get data used for making task statistic
 

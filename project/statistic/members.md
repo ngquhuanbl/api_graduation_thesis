@@ -1,14 +1,14 @@
-# Get **member** statistic data of the project
+# [PROJECT] Get **member** statistic data of the project
 
 Get the member statistic data of a specific project.
 
 The data includes the number of workers belongs to each type of role (Labeller - Reviewer)
 
-**Statistic URL**: `/members?projectID={project_id}`
+**Statistic URL**: `/members?project_id={project_id}`
 
-**Full URL** : `/api/project/statistic/members?projectID={project_id}`
+**Full URL** : `/api/project/statistic/members?project_id={project_id}`
 
-**URL Parameters** : `projectID=[number]` where `projectID` is the ID of the Project that needs the statistic data.
+**URL Parameters** : `project_id=[number]` where `project_id` is the ID of the Project that needs the statistic data.
 
 **Method** : `GET`
 

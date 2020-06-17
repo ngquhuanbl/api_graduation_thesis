@@ -5,57 +5,113 @@ const labels = [
     "id": 1,
     "name": "Fawkes the Phoenix",
     "color": "#c0392b",
-    "tool": "RECTANGLE",
+    "tool": 1,
   },
   {
     "id": 2,
     "name": "Basilisk",
     "color": "#218c74",
-    "tool": "RECTANGLE",
+    "tool": 1,
   },
   {
     "id": 3,
     "name": "Diricawl",
     "color": "#B33771",
-    "tool": "RECTANGLE",
+    "tool": 1,
   },
   {
     "id": 4,
     "name": "Niffler",
     "color": "#2C3A47",
-    "tool": "POLYGON",
+    "tool": 4,
   },
   {
     "id": 5,
     "name": "Billywig",
     "color": "#3B3B98",
-    "tool": "RECTANGLE",
+    "tool": 1,
   },
   {
     "id": 6,
     "name": "Mooncalf",
     "color": "#CAD3C8",
-    "tool": "POLYGON",
+    "tool": 4,
   },
   {
     "id": 7,
     "name": "Bowtruckle",
     "color": "#0be881",
-    "tool": "POLYGON",
+    "tool": 4,
   },
   {
     "id": 8,
     "name": "Demiguise",
     "color": "#d2dae2",
-    "tool": "POLYLINE",
+    "tool": 3,
   },
   {
     "id": 9,
     "name": "Dung Beetle",
     "color": "#ffa801",
-    "tool": "POINT",
+    "tool": 2,
   },
 ];
+// const labels = [
+//   {
+//     "id": 1,
+//     "name": "Fawkes the Phoenix",
+//     "color": "#c0392b",
+//     "tool": "RECTANGLE",
+//   },
+//   {
+//     "id": 2,
+//     "name": "Basilisk",
+//     "color": "#218c74",
+//     "tool": "RECTANGLE",
+//   },
+//   {
+//     "id": 3,
+//     "name": "Diricawl",
+//     "color": "#B33771",
+//     "tool": "RECTANGLE",
+//   },
+//   {
+//     "id": 4,
+//     "name": "Niffler",
+//     "color": "#2C3A47",
+//     "tool": "POLYGON",
+//   },
+//   {
+//     "id": 5,
+//     "name": "Billywig",
+//     "color": "#3B3B98",
+//     "tool": "RECTANGLE",
+//   },
+//   {
+//     "id": 6,
+//     "name": "Mooncalf",
+//     "color": "#CAD3C8",
+//     "tool": "POLYGON",
+//   },
+//   {
+//     "id": 7,
+//     "name": "Bowtruckle",
+//     "color": "#0be881",
+//     "tool": "POLYGON",
+//   },
+//   {
+//     "id": 8,
+//     "name": "Demiguise",
+//     "color": "#d2dae2",
+//     "tool": "POLYLINE",
+//   },
+//   {
+//     "id": 9,
+//     "name": "Dung Beetle",
+//     "color": "#ffa801",
+//     "tool": "POINT",
+//   },
+// ];
 const random = require('random-words')
 const fs = require('fs');
 const rawdata = fs.readFileSync('taskDetails.json');
@@ -97,16 +153,17 @@ module.exports = {
     // }
     const n = pageSize * pageNo;
     if (pageNo < 2) {
-      for (let i = (pageNo - 1) * pageNo; i < n; i += 1) {
+      for (let i = (pageNo - 1) * pageSize; i < n; i += 1) {
         const { id, author, download_url, width, height } = db[i];
         taskDetails.push({
-          "id": id,
+          "id": parseInt(id),
           "image": {
-            "id": id,
+            "id": parseInt(id),
             "name": author,
             "url": download_url,
             "width": width,
             "height": height,
+            "updatedAt": new Date(faker.date.recent()).getTime(),
           }
         })
       }
