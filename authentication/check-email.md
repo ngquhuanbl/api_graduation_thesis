@@ -1,6 +1,6 @@
-# Sign up
+# Check email
 
-Used to register a new user.
+Used to check whether an email is available
 
 **URL** : `/api/check-email/`
 

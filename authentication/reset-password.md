@@ -1,6 +1,6 @@
 # Reset password
 
-Used to verify a email and send the verification email to the corresponding mailbox
+Used to create a new password for user
 
 **URL** : `/api/reset-password/`
 
