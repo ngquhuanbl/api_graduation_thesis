@@ -178,16 +178,39 @@ Endpoints for viewing and manipulating the Tasks that the Authenticated User has
 
 ---
 ## **HƯNG SERVER**
+
 ## Open Endpoints
 
 Open endpoints require no Authentication.
-* [Login](login.md) : `POST /api/login/`
+* [Login](authentication/login.md) : `POST /oauth/token/`
+* [Sign up](authentication/sign-up.md) : `POST /oauth/register/`
+* [Check emai](authentication/check-email.md) : `POST /api/check-email/`
+* [Forgot password](authentication/forgot-password.md) : `POST /oauth/resetpwd`
+* [Reset password](authentication/reset-password.md): `POST /api/reset-password/`
+* [Refresh token](authentication/refresh-token.md): `POST /oauth/token/`
+* [Sign out](authentication/signout.md): `POST /oauth/logout/`
+
 
 ## Endpoints that require Authentication
 
 Closed endpoints require a valid Token to be included in the header of the
 request. A Token can be acquired from the Login view above.
 
+---
+
+**EXPIRED ACCESS TOKEN** Response
+
+**Code** : `401 INVALID TOKEN`
+
+**Content example**
+```json
+{
+    "status": -1,
+    "msg": "The access token provided has expired",
+    "data": {}
+}
+```
+---
 ### Annotate
 
 Endpoints for annotating that the Authenticated User has permissions to access:

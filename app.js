@@ -13,6 +13,139 @@ app.use(express.urlencoded({
     extended: true
 }));
 
+app.post('/api/login', function (req, res) {
+  console.log('Login');
+  console.log(req.body);
+  const success = true;
+  setTimeout(() => {
+    if (success) {
+      res.status(200).json({
+        "status": 1,
+        "data": {
+          "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiVlx1MDAxNcKbwoNUwoonbFPCu8KhwrYiLCJpYXQiOjE0NDQyNjI1NDMsImV4cCI6MTQ0NDI2MjU2M30.MldruS1PvZaRZIJR4legQaauQ3_DYKxxP2rFnD37Ip4",
+          "refresh_token": "fdb8fdbecf1d03ce5e6125c067733c0d51de209c",
+          "email": "iloveauth@example.com",
+          "name": "Daniel Caesar",
+        },
+        "msg": "Success",
+      })
+    } else {
+      res.status(200).json({
+        "status": -1,
+        "data": "",
+        "msg": "Invalid email or password",
+      })
+    }
+  }, 5000);
+});
+
+app.post('/api/signup', function (req, res) {
+  console.log('Sign up');
+  console.log(req.body);
+  const success = true;
+  setTimeout(() => {
+    if (success) {
+      res.status(200).json({
+        "status": 1,
+        "data": "",
+        "msg": "Success",
+      })
+    } else {
+      res.status(200).json({
+        "status": -1,
+        "data": "",
+        "msg": "Failed to register user",
+      })
+    }
+  }, 5000);
+});
+
+app.post('/api/check-email', function (req, res) {
+  console.log('check-email');
+  console.log(req.body);
+  const success = false;
+  setTimeout(() => {
+    if (success) {
+      res.status(200).json({
+        "status": 1,
+        "data": "",
+        "msg": "Available email",
+      })
+    } else {
+      res.status(401).json({
+        "status": -1,
+        "data": "",
+        "msg": "Existed email",
+      })
+    }
+  }, 100);
+});
+
+app.post('/api/forgot-password', function (req, res) {
+  console.log('Forgot password');
+  console.log(req.body);
+  const success = false;
+  setTimeout(() => {
+    if (success) {
+      res.status(200).json({
+        "status": 1,
+        "data": "",
+        "msg": "Success",
+      })
+    } else {
+      res.status(200).json({
+        "status": -1,
+        "data": "",
+        "msg": "Invalid email",
+      })
+    }
+  }, 5000);
+});
+
+app.post('/api/reset-password', function (req, res) {
+  console.log('Reset password');
+  console.log(req.body);
+  const success = true;
+  setTimeout(() => {
+    if (success) {
+      res.status(200).json({
+        "status": 1,
+        "data": "",
+        "msg": "Success",
+      })
+    } else {
+      res.status(200).json({
+        "status": -1,
+        "data": "",
+        "msg": "Failed to reset password",
+      })
+    }
+  }, 5000);
+});
+
+app.post('/api/refresh-token', function (req, res) {
+  console.log('Refresh token');
+  console.log(req.body);
+  const success = true;
+  setTimeout(() => {
+    if (success) {
+      res.status(200).json({
+        "status": 1,
+        "data": {
+          "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiVlx1MDAxNcKbwoNUwoonbFPCu8KhwrYiLCJpYXQiOjE0NDQyNjI1NDMsImV4cCI6MTQ0NDI2MjU2M30.MldruS1PvZaRZIJR4legQaauQ3_DYKxxP2rFnD37Ip4",
+        },
+        "msg": "Success",
+      })
+    } else {
+      res.status(200).json({
+        "status": -1,
+        "data": "",
+        "msg": "Failed to reset password",
+      })
+    }
+  }, 5000);
+});
+
 app.get('/api/project/statistic/overall', function (req, res) {
   console.log(req.query.project_id);
   res.json(projectStatisticDataGenerator.overall());
