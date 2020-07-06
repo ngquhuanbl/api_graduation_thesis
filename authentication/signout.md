@@ -2,7 +2,7 @@
 
 Used to sign out an user (revoke the tokens).
 
-**URL** : `/oauth/logout/`
+**URL** : `/logout`
 
 **Method** : `POST`
 

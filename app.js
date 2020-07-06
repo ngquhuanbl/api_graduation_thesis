@@ -177,7 +177,7 @@ app.get('/api/dataset', function (req, res) {
   }, 5000)
 });
 
-app.get('/api/label', function (req, res) {
+app.get('/api/labels', function (req, res) {
   console.log(req.query.project_id);
   res.json(labelDataGenerator.getLabels());
 });

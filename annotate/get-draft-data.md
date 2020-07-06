@@ -70,7 +70,9 @@ Get UNSUBMITTED (aka DRAFT) annotation data of a task
             "bitmap": null,
           },
         }
-      ]
+      ],
+      "createdAt": 1590464805346,
+      "updatedAt": 1590466281500,
     }
   ],
   "msg": null,

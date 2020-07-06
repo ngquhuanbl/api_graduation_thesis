@@ -2,7 +2,7 @@
 
 Used to verify a email and send the verification email to the corresponding mailbox
 
-**URL** : `/oauth/resetpwd`
+**URL** : `/pwd/forgot`
 
 **Method** : `POST`
 

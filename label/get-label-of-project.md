@@ -2,9 +2,9 @@
 
 Get the list of labels that belongs to a project
 
-**URL** : `/api/label?id={project_id}`
+**URL** : `/api/labels?project_id={project_id}`
 
-**URL Parameters** : `id=[number]` where `id` is the ID of the Project that the desired labels belong to
+**URL Parameters** : `project_id=[number]` where `project_id` is the ID of the Project that the desired labels belong to
 
 **Method** : `GET`
 

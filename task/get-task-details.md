@@ -8,12 +8,12 @@ Each element of the list includes:
 
 
 
-**URL** : `/api/task/task-details?pg_no={page_number}&pg_size={page_size}&task={task_id}`
+**URL** : `{host}/pluto/api/v1/tasks/:task_id/details?page={page_number}&page_size={page_size}`
 
 **URL Parameters** :
-- `pg_no=[number]` where `pg_no` is the index of the current page
-- `pg_size=[number]` where `pg_size` is the size of the page
-- `task=[number]` where `task` is the ID of the task
+- `task_id=[number]` where `task_id` is the ID of the task
+- `page=[number]` where `page` is the index of the current page
+- `page_size=[number]` where `page_size` is the size of the page
 
 **Method** : `GET`
 
