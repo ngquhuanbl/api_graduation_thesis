@@ -2,7 +2,7 @@
 
 Used to register a new user.
 
-**URL** : `/oauth/register/`
+**URL** : `/register/`
 
 **Method** : `POST`
 

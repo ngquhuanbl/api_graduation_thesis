@@ -170,8 +170,8 @@ app.get('/api/project/statistic/labels', function (req, res) {
   }, 5000)
 });
 
-app.get('/api/dataset', function (req, res) {
-  console.log(req.query);
+app.get('/api/datasets', function (req, res) {
+  console.log(req.query.project_id);
   setTimeout(() => {
     res.json(datasetDataGenerator.getDatasets());
   }, 5000)

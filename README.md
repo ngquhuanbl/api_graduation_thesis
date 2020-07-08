@@ -183,7 +183,7 @@ Endpoints for viewing and manipulating the Tasks that the Authenticated User has
 
 Open endpoints require no Authentication.
 * [Login](authentication/login.md) : `POST /oauth/token`
-* [Sign up](authentication/sign-up.md) : `POST /oauth/register`
+* [Sign up](authentication/sign-up.md) : `POST /register`
 * [Check emai](authentication/check-email.md) : `POST /api/check-email`
 * [Forgot password](authentication/forgot-password.md) : `POST /pwd/forgot`
 * [Reset password](authentication/reset-password.md): `POST /pwd/reset`

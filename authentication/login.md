@@ -25,20 +25,11 @@ String CLIENT_SECRET = "my-secret";
 **Body:** ```form-data```
   ``` json
   {
-      "username": "nchconghung@gmail.com",
+      "email": "nchconghung@gmail.com",
       "password" : "maudoden",
       "grant_type": "password"
   }
   ```
-
-*Data example*
-
-```json
-{
-    "email": "iloveauth@example.com",
-    "password": "abcd1234"
-}
-```
 
 ## Success Response
 
