@@ -8,15 +8,22 @@ The data includes:
 
 The data will be filtered by dataset (if required)
 
-**Statistic URL**: `/members/`
+**Path** : `{host}/pluto/api/v1/projects/{project_id}/stat/images`
 
-**Full URL** : `/api/project/statistic/members/`
-* Filtered by all dataset: `/api/project/statistic/members?project_id={project_id}`
-* Filtered by a specific dataset: `/api/project/statistic/members?project_id={project_id}&dataset_id={dataset_id}`
+**URL Parameters** :
 
-**URL Parameters** : 
-* `project_id=[number]` where `project_id` is the ID of the Project that needs the statistic data.
-* `dataset_id=[number]` where `datasetID` is the ID of the Dataset that the statistic data will be filtered by.
+| Param | Type | Note |
+|-------|------|------|
+| host | string | host of service |
+| project_id | number | ID of the project needing statistic | 
+
+**Query:**
+
+| Param | Type | Note |
+|-------|------|------|
+| dataset_id | number | ID of the dataset needing statisctic |
+
+
 
 **Method** : `GET`
 
@@ -45,13 +52,13 @@ The server responses with a result of:
   "status": 1,
   "msg": null,
   "data": {
-    "line": [
-      { "n": 750, "t": 0 },
-      { "n": 1485, "t": 1 },
-      { "n": 123, "t": 3 },
-      { "n": 150, "t": 4 }
+    "annotated_times": [
+      { "count": 750, "times": 0 },
+      { "count": 1485, "times": 1 },
+      { "count": 123, "times": 3 },
+      { "count": 150, "times": 4 }
     ],
-    "donut": [
+    "annotated_status": [
       { "name": "Finished", "value": 1345 },
       { "name": "Unused", "value": 1163 }
     ]
@@ -61,11 +68,10 @@ The server responses with a result of:
 
 ## Error Responses
 
-**Condition** : If Project does not exist with `"id"` of prov"id"ed `"id"` parameter.
-
-**Code** : `404 NOT FOUND`
-
-**Content** : `{}`
+| status | Error Type | Note
+|--------|------|----|
+| -1 | BadRequest | Provided ID not match with any project. |
+| -12xx | Execution Error | Error when execute request. |
 
 ### Or
 

@@ -8,22 +8,29 @@ The data includes:
 
 The data will be filtered by label (if required)
 
-**Statistic URL**: `/labels/`
+**Path** : `{host}/pluto/api/v1/projects/{project_id}/stat/labels`
 
-**Full URL** : 
-* Filtered by all labels :`/api/project/statistic/labels?project_id={project_ID}
-`
-* Filtered by a specific labels: `/api/project/statistic/labels?project_id={project_ID}&labe_id={label_ID}`
+**URL Parameters** :
 
-**URL Parameters** : 
-* `project_id=[number]` where `project_id` is the ID of the Project that needs the statistic data.
-* `label_id=[number]` where `labelID` is the ID of the Label that the statistic data will be filtered by.
+| Param | Type | Note |
+|-------|------|------|
+| host | string | host of service |
+| project_id | number | ID of the project needing statistic | 
+
+**Query:**
+
+| Param | Type | Note |
+|-------|------|------|
+| label_id | number | ID of the label needing statisctic |
 
 **Method** : `GET`
 
 **Auth required** : YES
 
 **Permissions required** : YES
+
+**Example:**
+`https://www.usanno.tk/pluto/api/v1/projects/234/stat/labels?label_id=5398`
 
 ## Success Response
 
@@ -42,7 +49,7 @@ The server responses with a result of:
   "status": 1,
   "msg": null,
   "data": {
-    "n": 1500,
+    "total_objects": 1500,
     "donut": [
       { "name": "Have the label", "value": 1345 },
       { "name": "Don't have the label", "value": 1163 }
@@ -53,11 +60,10 @@ The server responses with a result of:
 
 ## Error Responses
 
-**Condition** : If Project does not exist with `id` of provided `id` parameter.
-
-**Code** : `404 NOT FOUND`
-
-**Content** : `{}`
+| status | Error Type | Note
+|--------|------|----|
+| -1 | BadRequest | Provided ID not match with any project. |
+| -12xx | Execution Error | Error when execute request. |
 
 ### Or
 
