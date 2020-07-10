@@ -4,11 +4,14 @@ Get the member statistic data of a specific project.
 
 The data includes the number of workers belongs to each type of role (Labeller - Reviewer)
 
-**Statistic URL**: `/members?project_id={project_id}`
+**Path** : `{host}/pluto/api/v1/projects/{project_id}/stat/members`
 
-**Full URL** : `/api/project/statistic/members?project_id={project_id}`
+**URL Parameters** :
 
-**URL Parameters** : `project_id=[number]` where `project_id` is the ID of the Project that needs the statistic data.
+| Param | Type | Note |
+|-------|------|------|
+| host | string | host of service |
+| project_id | number | ID of the project needing statistic | 
 
 **Method** : `GET`
 
@@ -39,11 +42,10 @@ The server responses with a result of:
 
 ## Error Responses
 
-**Condition** : If Project does not exist with `id` of provided `id` parameter.
-
-**Code** : `404 NOT FOUND`
-
-**Content** : `{}`
+| status | Error Type | Note
+|--------|------|----|
+| -1 | BadRequest | Provided ID not match with any project. |
+| -12xx | Execution Error | Error when execute request. |
 
 ### Or
 
